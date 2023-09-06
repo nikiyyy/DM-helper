@@ -1,30 +1,30 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<p>Hello, World!</p>"
+    return render_template('index.html')
 
 @app.route("/stats")
 def stats():
-    return "<p>Hello, stats!</p>"
+    return render_template('stats.html')
 
 @app.route("/notes")
 def notes():
-    return "<p>Hello, notes!</p>"
+    return render_template('notes.html')
 
 @app.route("/combat")
 def combat():
-    return "<p>Hello, combat!</p>"
+    return render_template('combat.html')
 
 @app.route("/dictionary")
 def dictionary():
-    return "<p>Hello, dictionary!</p>"
+    return render_template('dictionary.html')
 
 @app.route("/about")
 def about():
-    return "<p>Hello, about!</p>"
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
